@@ -4,7 +4,7 @@
 .display {
     font-family: v.$header-font;
     font-size: v.$display;
-    color: v.$blue;
+    color: v.$brown;
     margin-bottom: 12px;
     letter-spacing: 2px;
 }
@@ -26,7 +26,7 @@
     font-size: v.$body;
     font-weight: 400;
     color: v.$white;
-    line-height: 14px;
+    line-height: 16px;
 }
 
 .caption {
@@ -60,7 +60,7 @@
     .display {
         font-family: v.$header-font;
         font-size: v.$m-display;
-        color: v.$yellow;
+        color: v.$brown;
         margin-bottom: 14px;
     }
     
@@ -96,7 +96,7 @@
     .display {
         font-family: v.$header-font;
         font-size: v.$l-display;
-        color: v.$yellow;
+        color: v.$brown;
         margin-bottom: 18px;
     }
     
