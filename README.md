@@ -20,8 +20,6 @@ Welcome to the **Bikini Bottom Database** – a relational database inspired by 
 - **Krusty Krab** – Home of the Krabby Patty and SpongeBob’s workplace.
 - **Chum Bucket** – Plankton’s not-so-popular fast-food joint.
 
----
-
 ## 💾 Installation 
 To run the portfolio locally:
 
