@@ -145,6 +145,55 @@
     height: 500px;
 }
 
+// Wood Container
+.wood-cont {
+    background-color: #d1944a; 
+    border: 6px solid #632800;
+    border-radius: 20px 25px 15px 30px;
+    box-shadow:
+      inset 4px 4px 0 #ffd6bb,
+      inset -4px -4px 0 #5a2b0c,
+      4px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    max-width: 700px;
+    margin: 2rem 1rem;
+    color: #3e1f0e;
+    text-align: center;
+    transform: rotate(-1deg);
+}
+
+.wood-cont-2 {
+    background-color: rgb(77, 31, 0); 
+    border: 6px solid #291100;
+    border-radius: 20px 25px 15px 30px;
+    box-shadow:
+      inset 4px 4px 0 #edac81,
+      inset -4px -4px 0 #5a2603,
+      4px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: .5rem;
+    max-width: 700px;
+    margin: 1rem 4rem;
+    color: #3e1f0e;
+    text-align: center;
+    transform: rotate(2deg);
+}
+
+.wood-cont-3 {
+    background-color: rgb(77, 31, 0); 
+    border: 6px solid #291100;
+    border-radius: 20px 25px 15px 30px;
+    box-shadow:
+      inset 4px 4px 0 #edac81,
+      inset -4px -4px 0 #5a2603,
+      4px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    max-width: 700px;
+    margin: 2rem 1rem;
+    color: #3e1f0e;
+    text-align: start;
+    transform: rotate(-2deg);
+}
+
 @media screen and (min-width: 768px) {
     .container-2 {
         display: flex;
