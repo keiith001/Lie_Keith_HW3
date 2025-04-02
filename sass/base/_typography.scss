@@ -4,7 +4,7 @@
 .display {
     font-family: v.$header-font;
     font-size: v.$display;
-    color: v.$yellow;
+    color: v.$blue;
     margin-bottom: 12px;
     letter-spacing: 2px;
 }
@@ -65,7 +65,7 @@
     }
     
     .header {
-        font-family: v.$body-font;
+        font-family: v.$header-font;
         font-size: v.$m-header;
         color: v.$white;
     }
@@ -101,7 +101,7 @@
     }
     
     .header {
-        font-family: v.$body-font;
+        font-family: v.$header-font;
         font-size: v.$l-header;
         color: v.$white;
     }
