@@ -14,8 +14,25 @@ class HouseController extends Controller
 
     public function getOne($id)
     {
-        $house = DB::table('houses')->find($id);
-        return response()->json($house ?: ['message' => 'House not found'], $house ? 200 : 404);
+        $house = DB::table('houses')
+        ->join('owners', 'houses.owner_id', '=', 'owners.id')
+        ->select(
+            'houses.id',
+            'houses.name as house_name',
+            'houses.date_built',
+            'houses.house_img',
+            'owners.name as owner_name',
+            'owners.bio',
+            'owners.job'
+        )
+        ->where('houses.id', $id)
+        ->first();
+
+        if ($house) {
+            return response()->json($house);
+        } else {
+            return response()->json(['message' => 'Not found'], 404);
+        }
     }
 
     public function getWithOwners()

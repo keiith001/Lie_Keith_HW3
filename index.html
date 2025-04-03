@@ -5,48 +5,62 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <title>Bikini Bottom Iconic Properties</title>
     <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
-    <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="module" src="js/main.js"></script>
 </head>
 <body>
-    <h1 class="hidden">Bikini Bottom Iconic Properties</h1>
-    <div id="hero">
-      <img src="./images/bikini-bottom-logo.png" alt="Bikini Bottom Logo">
-      <div class="wood-cont">
-        <h2 class="display text-center">Bikini Bottom Most Iconic Properties</h2>
+    <div id="app">
+      <h1 class="hidden">Bikini Bottom Iconic Properties</h1>
+      <div id="hero">
+        <img src="./images/bikini-bottom-logo.png" alt="Bikini Bottom Logo">
+        <div class="wood-cont">
+          <h2 class="display text-center">Bikini Bottom Most Iconic Properties</h2>
+        </div>
+
+        <div class="wood-cont-2">
+          <p class="body-text container-1 orient-center text-center">You will see some of the most iconic buildings in Bikini Bottom! Click any of them to see their information!</p>
+        </div>
       </div>
 
-      <div class="wood-cont-2">
-        <p class="body-text container-1 orient-center text-center">You will see some of the most iconic buildings in Bikini Bottom! Click any of them to see their information!</p>
+      <div id="houses">
+          <h2 class="header text-center">Houses Lists</h2>
+          <p class="body-text text-center">Let's take a look at Bikini Bottom's Best Properties!</p>
+
+          <div v-if="loading">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#5B2406" stroke="#5B2406" stroke-width="15" r="15" cx="40" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#5B2406" stroke="#5B2406" stroke-width="15" r="15" cx="100" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#5B2406" stroke="#5B2406" stroke-width="15" r="15" cx="160" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
+          </div>
+
+          <ul id="houses-list">
+              <li v-for="house in housesData">
+                  <h3 class="sub-head">
+                    <a class="prim-btn" href="#house" @click="getHouse(`${house.id}`)">{{house.name}}</a>
+                  </h3>
+              </li>
+          </ul>
       </div>
-    </div>
 
-    <div id="houses">
-        <h2 class="header">Houses Lists</h2>
-        <p class="body-text">Let's take a look at Bikini Bottom's Best Properties!</p>
+      <!-- Error Message -->
+      <section v-if="error">
+        {{error}}
+      </section>
 
-        <ul id="houses-list">
-            <li>
-                <h3 class="sub-head">House Name: Pineaple House
-                    <!-- Details -->
-                </h3>
-            </li>
-        </ul>
-    </div>
+      <!-- Houses Owner Information -->
+      <div id="ownerInfoCont">
+        <div v-if="loading">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#5B2406" stroke="#5B2406" stroke-width="15" r="15" cx="40" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#5B2406" stroke="#5B2406" stroke-width="15" r="15" cx="100" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#5B2406" stroke="#5B2406" stroke-width="15" r="15" cx="160" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
+        </div>
+          <section id="owner-info" v-if="name">
+              <img :src="`images/${image}`">
 
-    <!-- Houses Owner Information -->
-    <div id="ownerInfoCont">
-        <section id="owner-info">
-            <img src="./images/pineapple_house.jpg">
-
-            <div class="wood-cont-3">
-              <p class="body-text"><span class="sub-head">Owner Name:</span>Spongebob</p>
-              <p class="body-text"><span class="sub-head">Bio:</span>Spongebob</p>
-              <p class="body-text"><span class="sub-head">Job:</span>Patty Fryer</p>
-            </div>
-        </section>
+              <div class="wood-cont-3">
+                <p class="body-text"><span class="sub-head">Owner Name:</span>{{name}}</p>
+                <p class="body-text"><span class="sub-head">Built in:</span>{{date_built}}</p>
+                <p class="body-text"><span class="sub-head">Bio:</span>{{bio}}</p>
+                <p class="body-text"><span class="sub-head">job:</span>{{job}}</p>
+              </div>
+          </section>
+      </div>
     </div>
 
 </body>
