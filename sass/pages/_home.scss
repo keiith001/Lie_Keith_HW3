@@ -2,7 +2,17 @@
 
 body {
     background-color: v.$yellow;
+    background-image:
+    radial-gradient(circle at 20% 30%, #caa50e 10%, transparent 11%),
+    radial-gradient(circle at 70% 20%, #caa50e 8%, transparent 9%),
+    radial-gradient(circle at 60% 80%, #caa50e 12%, transparent 13%),
+    radial-gradient(circle at 90% 60%, #caa50e 6%, transparent 7%),
+    radial-gradient(circle at 15% 65%, #caa50e 9%, transparent 10%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
 
 // Mobile Style
 #hero {
@@ -23,10 +33,20 @@ body {
     margin: 3rem 0;
 
     ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3.5rem;
         margin: 2rem 0;
         padding: 1rem;
+
         li {
             list-style: none;
+
+            a {
+                text-decoration: none;
+            }
         }
     }
 }
